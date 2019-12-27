@@ -17,7 +17,7 @@ def startkit():
     if request.method == 'POST':
         print(request.json)
 
-    kit = request.json
+    kit = request.json['text']
 
     if kit == 'Smart Asset Monitoring':
         GPIO.output(11,1)
