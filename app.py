@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import json
-from flask import Flask, render_template, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 port = '5000'
