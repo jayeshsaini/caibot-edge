@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import json
 from flask import Flask, render_template, request
 
 app = Flask(__name__)
@@ -21,7 +22,7 @@ def startkit():
     if kit == 'Smart Asset Monitoring':
         GPIO.output(11,1)
 
-     return jsonify(
+    return jsonify(
         status = 200,
         replies = [
             {
