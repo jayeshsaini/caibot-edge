@@ -7,6 +7,10 @@ port = '5000'
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(11,GPIO.OUT)
 
+@app.route('/')
+def index():
+    return "<h2>SAP Conversational AI Edge<h2>"
+
 @app.route("/startkit", methods = ['POST'])
 def startkit():
     if request.method == 'POST':
