@@ -21,6 +21,7 @@ def startkit():
 
     if kit == 'Smart Asset Monitoring':
         GPIO.output(11,1)
+        print("started")
 
     return jsonify(
         status = 200,
