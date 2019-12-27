@@ -20,5 +20,14 @@ def startkit():
 
     if kit == 'Smart Asset Monitoring':
         GPIO.output(11,1)
-   
+
+     return jsonify(
+        status = 200,
+        replies = [
+            {
+                'type': 'text',
+                'content': 'Starting Kit'
+                }
+            ]
+        )
 app.run(port=port)
