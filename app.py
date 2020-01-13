@@ -19,7 +19,7 @@ def startkit():
 
     kit = request.json['text']
 
-    if (kit == 'primary fan' ||kit == "fan"):
+    if kit == 'fan':
         GPIO.output(11,0)
         print("Primary fan failed")
 
