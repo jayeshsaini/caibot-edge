@@ -12,23 +12,23 @@ GPIO.setup(11,GPIO.OUT)
 def index():
     return "<h2>SAP Conversational AI Edge<h2>"
 
-@app.route("/startkit", methods = ['POST'])
+@app.route("/fan-fail", methods = ['POST'])
 def startkit():
     if request.method == 'POST':
         print(request.json)
 
     kit = request.json['text']
 
-    if kit == 'Smart Asset Monitoring':
-        GPIO.output(11,1)
-        print("started")
+    if (kit == 'primary fan' ||kit == "fan"):
+        GPIO.output(11,0)
+        print("Primary fan failed")
 
     return jsonify(
         status = 200,
         replies = [
             {
                 'type': 'text',
-                'content': 'Starting Kit'
+                'content': 'Failing primary fan'
                 }
             ]
         )
